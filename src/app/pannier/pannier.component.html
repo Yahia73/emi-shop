@@ -1,0 +1,36 @@
+<h1>Panier</h1>
+<div class="container">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">Image</th>
+          <th scope="col">Nom</th>
+          <th scope="col">Description</th>
+          <th scope="col">Prix</th>
+          <th scope="col">Quantité</th>
+          <th scope="col">Total</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let produit of keys">
+          <td><img [src]="produit.image" alt="{{produit.name}}" style="width: 100px;"></td>
+          <td>{{produit.name}}</td>
+          <td>{{produit.description}}</td>
+          <td>{{produit.price}} €</td>
+          <td>{{mapProduit.get(produit) || 0}}</td>
+          <td>{{produit.price * (mapProduit.get(produit) || 0)}} €</td>
+        </tr>
+         
+      </tbody>
+      <tfoot>
+        <tr>
+          <td colspan="5" class="text-right"><strong>Prix Total :</strong></td>
+          <td>
+            <strong>{{ calculateTotalPrice() }} €</strong>
+          </td>
+        </tr>
+      </tfoot>
+      
+    </table>
+  </div>
+  

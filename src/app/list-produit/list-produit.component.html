@@ -1,0 +1,27 @@
+<div class="container-fluid my-3">
+    <div class="row justify-content-center">
+        <div class="row">
+            <div class="col-md-3 ">
+                <app-produit-item [produit]="products[0]" (selectedProduct)="recevoirProduit($event)"></app-produit-item>
+                
+            </div>
+            <div class="col-md-3  ">
+                <app-produit-item [produit]="products[1]" (selectedProduct)="recevoirProduit($event)"></app-produit-item>
+                
+            </div>
+            <div class="col-md-3  ">
+                <app-produit-item [produit]="products[2]" (selectedProduct)="recevoirProduit($event)"></app-produit-item>
+       
+            </div>
+            <div class="col-md-3  ">
+                <app-produit-item [produit]="products[3]" (selectedProduct)="recevoirProduit($event)"></app-produit-item>
+                
+            </div>  
+              
+        </div>
+    </div>
+</div>
+<div>
+    <app-pannier [mapProduit]="ligneCommande"></app-pannier>
+</div>
+
